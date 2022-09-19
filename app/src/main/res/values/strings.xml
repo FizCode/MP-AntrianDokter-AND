@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Antrian Dokter</string>
+    <string name="masuk">Masuk</string>
+    <string name="icon_text">MediQ</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="daftar">Daftar</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="nik">NIK</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <string name="alamat">Alamat</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+
+    <string-array name="gender">
+        <item>Pria</item>
+        <item>Wanita</item>
+    </string-array>
 </resources>
