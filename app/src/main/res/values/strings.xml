@@ -1,7 +1,6 @@
 <resources>
-    <string name="app_name">Antrian Dokter</string>
+    <string name="app_name">MediQ</string>
     <string name="masuk">Masuk</string>
-    <string name="icon_text">MediQ</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="daftar">Daftar</string>
@@ -15,4 +14,8 @@
         <item>Pria</item>
         <item>Wanita</item>
     </string-array>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

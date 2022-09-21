@@ -7,14 +7,19 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import androidx.activity.viewModels
 import androidx.annotation.ColorInt
+import dagger.hilt.android.AndroidEntryPoint
 import stmik.mp.hafiz.antriandokter.R
 import stmik.mp.hafiz.antriandokter.databinding.ActivitySplashBinding
+import stmik.mp.hafiz.antriandokter.ui.navbar.MenuActivity
 import stmik.mp.hafiz.antriandokter.ui.signin.SignInActivity
 
 @SuppressLint("CustomSplashScreen")
+@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
+    private val viewModel: SplashViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
@@ -24,16 +29,33 @@ class SplashActivity : AppCompatActivity() {
             window.navigationBarColor = getColor(R.color.primary_500)
         }
 
-        val timer = object : CountDownTimer(4000, 1000) {
+        val timer = object : CountDownTimer(3000, 1000) {
             override fun onTick(millisUntilFinished: Long) {}
 
             override fun onFinish() {
-                val intent = Intent(this@SplashActivity, SignInActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
+                viewModel.onViewLoaded()
             }
 
         }
         timer.start()
+        bindViewModel()
+    }
+
+    private fun bindViewModel() {
+        viewModel.shouldOpenSignIn.observe(this) {
+            if (it) {
+                val intent = Intent(this, SignInActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
+        }
+
+        viewModel.shouldOpenMenuPage.observe(this) {
+            if (it) {
+                val intent = Intent(this, MenuActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
+        }
     }
 }
