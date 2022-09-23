@@ -1,4 +1,4 @@
-name: Antrian Dokter CI
+name: Antrian Dokter (MediQ) CI
 
 on:
   push:

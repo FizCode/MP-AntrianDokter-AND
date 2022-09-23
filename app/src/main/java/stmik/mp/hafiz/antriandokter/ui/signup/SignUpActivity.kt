@@ -1,15 +1,18 @@
 package stmik.mp.hafiz.antriandokter.ui.signup
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointBackward
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import stmik.mp.hafiz.antriandokter.R
 import stmik.mp.hafiz.antriandokter.databinding.ActivitySignUpBinding
@@ -27,15 +30,11 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-    }
-
-    override fun onResume() {
-        super.onResume()
         bindView()
+        bindViewModel()
     }
 
     private fun bindView() {
-
         binding.etSignupDob.setOnClickListener {
             val constraintsBuilder = CalendarConstraints.Builder()
                 .setValidator(DateValidatorPointBackward.now())
@@ -55,15 +54,17 @@ class SignUpActivity : AppCompatActivity() {
         val arrayAdapter = ArrayAdapter(this@SignUpActivity, R.layout.dropdown_item, gender)
         binding.actvSignupGender.setAdapter(arrayAdapter)
 
-        binding.etSigupName.doAfterTextChanged { viewModel.onChangeName(it.toString()) }
-        binding.etSigupNik.doAfterTextChanged { viewModel.onChangeNIK(it.toString()) }
-        binding.etSigupEmail.doAfterTextChanged { viewModel.onChangeEmail(it.toString()) }
-        binding.etSignupDob.doAfterTextChanged { viewModel.onChangeDoB(it.toString()) }
-        binding.etSignupDob.doAfterTextChanged { viewModel.onChangeDoB(it.toString()) }
-        binding.etSigupAlamat.doAfterTextChanged { viewModel.onChangeAddress(it.toString()) }
-        binding.actvSignupGender.doAfterTextChanged { viewModel.onChangeGender(it.toString()) }
-        binding.actvSignupGender.doAfterTextChanged { viewModel.onChangeGender(it.toString()) }
-        binding.etSigupPassword.doAfterTextChanged { viewModel.onChangePassword(it.toString()) }
+        with(binding) {
+            etSigupName.doAfterTextChanged { viewModel.onChangeName(it.toString()) }
+            etSigupNik.doAfterTextChanged { viewModel.onChangeNIK(it.toString()) }
+            etSigupEmail.doAfterTextChanged { viewModel.onChangeEmail(it.toString()) }
+            etSignupDob.doAfterTextChanged { viewModel.onChangeDoB(it.toString()) }
+            etSignupDob.doAfterTextChanged { viewModel.onChangeDoB(it.toString()) }
+            etSigupAlamat.doAfterTextChanged { viewModel.onChangeAddress(it.toString()) }
+            actvSignupGender.doAfterTextChanged { viewModel.onChangeGender(it.toString()) }
+            actvSignupGender.doAfterTextChanged { viewModel.onChangeGender(it.toString()) }
+            etSigupPassword.doAfterTextChanged { viewModel.onChangePassword(it.toString()) }
+        }
 
         binding.btnSignup.setOnClickListener {
             onValidate()
@@ -75,6 +76,26 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+
+    private fun bindViewModel() {
+        viewModel.shouldShowError.observe(this) {
+            val snackbar = Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG)
+            snackbar.view.setBackgroundColor(Color.RED)
+            snackbar.show()
+        }
+        viewModel.shouldShowLoading.observe(this) {
+            if (it) {
+                binding.piSignup.visibility = View.VISIBLE
+            } else {
+                binding.piSignup.visibility = View.INVISIBLE
+            }
+        }
+        viewModel.shouldOpenSignIn.observe(this) {
+            val intent = Intent(this, SignInActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+        }
     }
 
     private fun onValidate() {
@@ -94,9 +115,9 @@ class SignUpActivity : AppCompatActivity() {
             tvAddress.error = null
             tvGender.error = null
             tvPassword.error = null
-        } else if (binding.etSigupNik.text!!.isEmpty()) {
+        } else if (binding.etSigupNik.text!!.length < 12) {
             tvName.error = null
-            tvNik.error = "NIK harus diisi!"
+            tvNik.error = "NIK terdiri dari 12 angka"
             tvEmail.error = null
             tvDob.error = null
             tvAddress.error = null

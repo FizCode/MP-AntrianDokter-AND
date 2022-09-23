@@ -9,4 +9,12 @@ import retrofit2.http.POST
 interface AuthAPI {
     @POST("login")
     suspend fun signIn(@Body request: SignInRequest): Response<SignInResponse>
+
+    @POST("register")
+    suspend fun signUp(@Body request: SignUpRequest): Response<SignUpResponse>
+
+    @GET("who-am-i")
+    suspend fun getUserData(
+        @Header("Authorization") token: String,
+    ): Response<WhoAmIResponse>
 }

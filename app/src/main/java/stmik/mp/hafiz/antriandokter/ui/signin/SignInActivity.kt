@@ -45,18 +45,22 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun bindViewModel() {
-        viewModel.shouldOpenMenuPage.observe(this) {
-            val intent = Intent(this, MenuActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
+        viewModel.shouldShowError.observe(this) {
+            val snackbar = Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG)
+            snackbar.view.setBackgroundColor(Color.RED)
+            snackbar.show()
         }
-
         viewModel.shouldShowLoading.observe(this) {
             if (it) {
                 binding.piSignin.visibility = View.VISIBLE
             } else {
-                binding.btnSignin.visibility = View.INVISIBLE
+                binding.piSignin.visibility = View.INVISIBLE
             }
+        }
+        viewModel.shouldOpenMenuPage.observe(this) {
+            val intent = Intent(this, MenuActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
     }
 
