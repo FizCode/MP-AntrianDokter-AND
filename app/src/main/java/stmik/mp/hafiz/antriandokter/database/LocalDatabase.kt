@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import stmik.mp.hafiz.antriandokter.data.local.auth.UserDAO
 import stmik.mp.hafiz.antriandokter.data.local.auth.UserEntity
 
-@Database(entities = [UserEntity::class], version = 1)
+@Database(entities = [UserEntity::class], version = 2)
 abstract class LocalDatabase: RoomDatabase() {
     abstract fun userDAO(): UserDAO
 

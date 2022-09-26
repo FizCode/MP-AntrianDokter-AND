@@ -58,5 +58,14 @@
         <item name="android:padding">12dp</item>
         <item name="android:textSize">16sp</item>
     </style>
+    
+    <!-- Navbar -->
+    <style name="Widget.App.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/primary_300</item>
+    </style>
 
+    <!-- Rounded Image -->
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

@@ -18,4 +18,10 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="profil">Profil</string>
+    <string name="akun">Akun</string>
+    <string name="edit_profil">Edit Profil</string>
+    <string name="info_lainnya">Info Lainnya</string>
+    <string name="bantuan">Bantuan</string>
+    <string name="keluar">Keluar</string>
 </resources>

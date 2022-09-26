@@ -93,7 +93,7 @@
                 app:boxCornerRadiusTopEnd="16dp"
                 app:boxCornerRadiusTopStart="16dp"
                 app:counterEnabled="true"
-                app:counterMaxLength="12"
+                app:counterMaxLength="16"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_sigup_title_nik">

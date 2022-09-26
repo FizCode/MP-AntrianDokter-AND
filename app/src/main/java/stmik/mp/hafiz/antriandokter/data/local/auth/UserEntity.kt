@@ -15,5 +15,6 @@ data class UserEntity(
     @ColumnInfo(name = "gender") var gender: String? = null,
     @ColumnInfo(name = "image") var image: String? = null,
     @ColumnInfo(name = "NIK") var nik: String? = null,
-    @ColumnInfo(name = "phoneNumber") var phoneNumber: String? = null,
+    @ColumnInfo(name = "BPJS") var BPJS: String? = null,
+    @ColumnInfo(name = "phoneNumber") var phoneNumber: String? = null
 )

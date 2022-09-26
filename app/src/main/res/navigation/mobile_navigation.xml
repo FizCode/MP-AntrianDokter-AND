@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="stmik.mp.hafiz.antriandokter.ui.navbar.ui.dashboard.DashboardFragment"
+        android:name="stmik.mp.hafiz.antriandokter.ui.navbar.ui.dashboard.DaftarFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="stmik.mp.hafiz.antriandokter.ui.navbar.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_profil"
+        android:name="stmik.mp.hafiz.antriandokter.ui.navbar.ui.profil.ProfilFragment"
+        android:label="@string/profil"
+        tools:layout="@layout/fragment_profil" />
 </navigation>

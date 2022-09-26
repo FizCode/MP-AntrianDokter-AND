@@ -115,9 +115,9 @@ class SignUpActivity : AppCompatActivity() {
             tvAddress.error = null
             tvGender.error = null
             tvPassword.error = null
-        } else if (binding.etSigupNik.text!!.length < 12) {
+        } else if (binding.etSigupNik.text!!.length < 16) {
             tvName.error = null
-            tvNik.error = "NIK terdiri dari 12 angka"
+            tvNik.error = "NIK terdiri dari 16 angka"
             tvEmail.error = null
             tvDob.error = null
             tvAddress.error = null
