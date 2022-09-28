@@ -40,4 +40,12 @@ class AuthRepository @Inject constructor(
         return dao.insertUser(userEntity)
     }
 
+    suspend fun updateUserData(request: UpdateUserDataRequest, id: Int, token: String): Response<UpdateUserDataResponse> {
+        return  api.updateUserData(
+            request = request,
+            id = id,
+            token = token
+        )
+    }
+
 }

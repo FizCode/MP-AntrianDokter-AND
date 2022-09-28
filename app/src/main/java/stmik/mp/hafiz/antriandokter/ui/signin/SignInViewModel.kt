@@ -88,7 +88,6 @@ class SignInViewModel @Inject constructor(
                             dob = it.dateOfBirth.orEmpty(),
                             address = it.address.orEmpty(),
                             gender = it.gender.orEmpty(),
-                            image = it.image.orEmpty(),
                             nik = it.NIK.orEmpty(),
                             phoneNumber = it.phoneNumber.orEmpty()
                         )

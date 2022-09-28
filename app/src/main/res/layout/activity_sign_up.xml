@@ -38,7 +38,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_sigup_title_name"
+                android:id="@+id/tv_signup_title_name"
                 style="@style/body_semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -60,10 +60,10 @@
                 app:boxCornerRadiusTopStart="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_sigup_title_name">
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_title_name">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_sigup_name"
+                    android:id="@+id/et_signup_name"
                     style="@style/body_medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/tv_sigup_title_nik"
+                android:id="@+id/tv_signup_title_nik"
                 style="@style/body_semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -96,10 +96,10 @@
                 app:counterMaxLength="16"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_sigup_title_nik">
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_title_nik">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_sigup_nik"
+                    android:id="@+id/et_signup_nik"
                     style="@style/body_medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/tv_sigup_title_email"
+                android:id="@+id/tv_signup_title_email"
                 style="@style/body_semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -129,10 +129,10 @@
                 app:boxCornerRadiusTopStart="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_sigup_title_email">
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_title_email">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_sigup_email"
+                    android:id="@+id/et_signup_email"
                     style="@style/body_medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -141,7 +141,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/tv_sigup_title_dob"
+                android:id="@+id/tv_signup_title_dob"
                 style="@style/body_semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -165,11 +165,12 @@
                 app:endIconMode="custom"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_sigup_title_dob">
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_title_dob">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_signup_dob"
                     style="@style/body_medium"
+                    android:focusable="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Tanggal Lahir"
@@ -177,7 +178,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/tv_sigup_title_alamat"
+                android:id="@+id/tv_signup_title_alamat"
                 style="@style/body_semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -199,10 +200,10 @@
                 app:boxCornerRadiusTopStart="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_sigup_title_alamat">
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_title_alamat">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_sigup_alamat"
+                    android:id="@+id/et_signup_alamat"
                     style="@style/body_medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -211,7 +212,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/tv_sigup_title_gender"
+                android:id="@+id/tv_signup_title_gender"
                 style="@style/body_semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -233,7 +234,7 @@
                 app:boxCornerRadiusTopStart="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_sigup_title_gender">
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_title_gender">
 
                 <AutoCompleteTextView
                     android:id="@+id/actv_signup_gender"
@@ -246,7 +247,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/tv_sigup_title_password"
+                android:id="@+id/tv_signup_title_password"
                 style="@style/body_semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -268,11 +269,11 @@
                 app:boxCornerRadiusTopStart="16dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_sigup_title_password"
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_title_password"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_sigup_password"
+                    android:id="@+id/et_signup_password"
                     style="@style/body_medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

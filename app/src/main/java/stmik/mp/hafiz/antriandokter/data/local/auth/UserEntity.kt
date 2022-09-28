@@ -13,7 +13,6 @@ data class UserEntity(
     @ColumnInfo(name = "dateOfBirth") var dob: String? = null,
     @ColumnInfo(name = "address") var address: String? = null,
     @ColumnInfo(name = "gender") var gender: String? = null,
-    @ColumnInfo(name = "image") var image: String? = null,
     @ColumnInfo(name = "NIK") var nik: String? = null,
     @ColumnInfo(name = "BPJS") var BPJS: String? = null,
     @ColumnInfo(name = "phoneNumber") var phoneNumber: String? = null

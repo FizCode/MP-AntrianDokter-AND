@@ -19,7 +19,6 @@ class ProfileRepository @Inject constructor(
                 dateOfBirth = it?.dob.orEmpty(),
                 address = it?.address.orEmpty(),
                 gender = it?.gender.orEmpty(),
-                image = it?.image.orEmpty(),
                 NIK = it?.nik.orEmpty(),
                 BPJS = it?.BPJS.orEmpty(),
                 phoneNumber = it?.phoneNumber.orEmpty()
@@ -37,7 +36,6 @@ class ProfileRepository @Inject constructor(
             dob = profile?.dob.orEmpty(),
             address = profile?.address.orEmpty(),
             gender = profile?.gender.orEmpty(),
-            image = profile?.image.orEmpty(),
             nik = profile?.nik.orEmpty(),
             BPJS = profile?.BPJS.orEmpty(),
             phoneNumber = profile?.phoneNumber.orEmpty()

@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import stmik.mp.hafiz.antriandokter.databinding.FragmentProfilBinding
+import stmik.mp.hafiz.antriandokter.ui.bantuan.BantuanActivity
+import stmik.mp.hafiz.antriandokter.ui.editprofil.EditProfilActivity
 import stmik.mp.hafiz.antriandokter.ui.signin.SignInActivity
 
 @AndroidEntryPoint
@@ -28,26 +30,32 @@ class ProfilFragment : Fragment() {
 
         _binding = FragmentProfilBinding.inflate(inflater, container, false)
 
-        viewModel.getProfile()
-        bindView()
-        bindViewModel()
-
         return binding.root
     }
 
-    fun bindView() {
+    override fun onResume() {
+        super.onResume()
+        viewModel.onViewLoaded()
+        bindView()
+        bindViewModel()
+
+    }
+
+    private fun bindView() {
         binding.ivProfileEdit.setOnClickListener {
-            // Change to Edit Profil Activity
+            val intent = Intent(requireContext(), EditProfilActivity::class.java)
+            startActivity(intent)
         }
         binding.llBantuan.setOnClickListener {
-            // Change to Bantuan Activity
+            val intent = Intent(requireContext(), BantuanActivity::class.java)
+            startActivity(intent)
         }
         binding.llKeluar.setOnClickListener {
             viewModel.signOut()
         }
     }
 
-    fun bindViewModel() {
+    private fun bindViewModel() {
         viewModel.shouldShowProfile.observe(viewLifecycleOwner) {
             binding.tvProfileName.text = it.name
             binding.tvProfileEmail.text = it.email

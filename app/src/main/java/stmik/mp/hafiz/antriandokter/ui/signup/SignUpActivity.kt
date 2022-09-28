@@ -55,15 +55,14 @@ class SignUpActivity : AppCompatActivity() {
         binding.actvSignupGender.setAdapter(arrayAdapter)
 
         with(binding) {
-            etSigupName.doAfterTextChanged { viewModel.onChangeName(it.toString()) }
-            etSigupNik.doAfterTextChanged { viewModel.onChangeNIK(it.toString()) }
-            etSigupEmail.doAfterTextChanged { viewModel.onChangeEmail(it.toString()) }
+            etSignupName.doAfterTextChanged { viewModel.onChangeName(it.toString()) }
+            etSignupNik.doAfterTextChanged { viewModel.onChangeNIK(it.toString()) }
+            etSignupEmail.doAfterTextChanged { viewModel.onChangeEmail(it.toString()) }
             etSignupDob.doAfterTextChanged { viewModel.onChangeDoB(it.toString()) }
             etSignupDob.doAfterTextChanged { viewModel.onChangeDoB(it.toString()) }
-            etSigupAlamat.doAfterTextChanged { viewModel.onChangeAddress(it.toString()) }
+            etSignupAlamat.doAfterTextChanged { viewModel.onChangeAddress(it.toString()) }
             actvSignupGender.doAfterTextChanged { viewModel.onChangeGender(it.toString()) }
-            actvSignupGender.doAfterTextChanged { viewModel.onChangeGender(it.toString()) }
-            etSigupPassword.doAfterTextChanged { viewModel.onChangePassword(it.toString()) }
+            etSignupPassword.doAfterTextChanged { viewModel.onChangePassword(it.toString()) }
         }
 
         binding.btnSignup.setOnClickListener {
@@ -82,6 +81,10 @@ class SignUpActivity : AppCompatActivity() {
         viewModel.shouldShowError.observe(this) {
             val snackbar = Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG)
             snackbar.view.setBackgroundColor(Color.RED)
+            snackbar.show()
+        }
+        viewModel.shouldShowSuccess.observe(this) {
+            val snackbar = Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG)
             snackbar.show()
         }
         viewModel.shouldShowLoading.observe(this) {
@@ -107,7 +110,7 @@ class SignUpActivity : AppCompatActivity() {
         val tvGender = binding.tvSignupGender
         val tvPassword = binding.tvSignupPassword
 
-        if (binding.etSigupName.text!!.isEmpty()) {
+        if (binding.etSignupName.text!!.isEmpty()) {
             tvName.error = "Nama tidak boleh kosong!"
             tvNik.error = null
             tvEmail.error = null
@@ -115,7 +118,7 @@ class SignUpActivity : AppCompatActivity() {
             tvAddress.error = null
             tvGender.error = null
             tvPassword.error = null
-        } else if (binding.etSigupNik.text!!.length < 16) {
+        } else if (binding.etSignupNik.text!!.length < 16) {
             tvName.error = null
             tvNik.error = "NIK terdiri dari 16 angka"
             tvEmail.error = null
@@ -123,7 +126,7 @@ class SignUpActivity : AppCompatActivity() {
             tvAddress.error = null
             tvGender.error = null
             tvPassword.error = null
-        } else if (binding.etSigupEmail.text!!.isEmpty() && !Patterns.EMAIL_ADDRESS.matcher(binding.etSigupEmail.text.toString()).matches()) {
+        } else if (binding.etSignupEmail.text!!.isEmpty() && !Patterns.EMAIL_ADDRESS.matcher(binding.etSignupEmail.text.toString()).matches()) {
             tvName.error = null
             tvNik.error = null
             tvEmail.error = "Email tidak valid!"
@@ -139,7 +142,7 @@ class SignUpActivity : AppCompatActivity() {
             tvAddress.error = null
             tvGender.error = null
             tvPassword.error = null
-        } else if (binding.etSigupAlamat.text!!.isEmpty()) {
+        } else if (binding.etSignupAlamat.text!!.isEmpty()) {
             tvName.error = null
             tvNik.error = null
             tvEmail.error = null
@@ -155,7 +158,7 @@ class SignUpActivity : AppCompatActivity() {
             tvAddress.error = null
             tvGender.error = "Jenis kelamin harus dipilih!"
             tvPassword.error = null
-        } else if (binding.etSigupPassword.text!!.isEmpty()) {
+        } else if (binding.etSignupPassword.text!!.isEmpty()) {
             tvName.error = null
             tvNik.error = null
             tvEmail.error = null

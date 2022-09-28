@@ -28,6 +28,7 @@ class SignUpViewModel @Inject constructor(
 
     val shouldShowLoading: MutableLiveData<Boolean> = MutableLiveData()
     val shouldShowError: MutableLiveData<String> = MutableLiveData()
+    val shouldShowSuccess: MutableLiveData<String> = MutableLiveData()
     val shouldOpenSignIn: MutableLiveData<Boolean> = MutableLiveData()
 
     fun onChangeName(name: String) {
@@ -73,6 +74,7 @@ class SignUpViewModel @Inject constructor(
             withContext(Dispatchers.Main) {
                 if (result.isSuccessful) {
                     shouldOpenSignIn.postValue(true)
+                    shouldShowSuccess.postValue("Pendaftaran berhasil. Silakan login!")
                 } else {
                     val error =
                         Gson().fromJson(result.errorBody()?.string(), ErrorResponse::class.java)

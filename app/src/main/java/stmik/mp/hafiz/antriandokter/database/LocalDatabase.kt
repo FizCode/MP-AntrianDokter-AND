@@ -7,12 +7,12 @@ import androidx.room.RoomDatabase
 import stmik.mp.hafiz.antriandokter.data.local.auth.UserDAO
 import stmik.mp.hafiz.antriandokter.data.local.auth.UserEntity
 
-@Database(entities = [UserEntity::class], version = 2)
+@Database(entities = [UserEntity::class], version = 1, exportSchema = false)
 abstract class LocalDatabase: RoomDatabase() {
     abstract fun userDAO(): UserDAO
 
     companion object {
-        private const val DB_NAME = "SecondHand.db"
+        private const val DB_NAME = "MediQ.db"
 
         @Volatile
         private var INSTANCE: LocalDatabase? = null

@@ -25,7 +25,11 @@ class ProfilViewModel @Inject constructor(
     val shouldOpenSignIn: MutableLiveData<Boolean> = MutableLiveData()
     val shouldShowError: MutableLiveData<String> = MutableLiveData()
 
-    fun getProfile() {
+    fun onViewLoaded() {
+        getProfile()
+    }
+
+    private fun getProfile() {
         CoroutineScope(Dispatchers.Main).launch {
             val result = profileRepository.getProfile()
             withContext(Dispatchers.Main) {

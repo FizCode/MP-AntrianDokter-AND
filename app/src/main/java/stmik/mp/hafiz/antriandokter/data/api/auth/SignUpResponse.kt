@@ -9,7 +9,6 @@ data class SignUpResponse (
     @SerializedName("dateOfBirth" ) var dateOfBirth : String? = null,
     @SerializedName("address"     ) var address     : String? = null,
     @SerializedName("gender"      ) var gender      : String? = null,
-    @SerializedName("image"       ) var image       : String? = null,
     @SerializedName("NIK"         ) var NIK         : String? = null,
     @SerializedName("phoneNumber" ) var phoneNumber : String? = null
 )

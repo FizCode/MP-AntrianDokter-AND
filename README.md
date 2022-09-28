@@ -7,31 +7,32 @@ Coming soon...
 
 ## Team 6 Project Structure
 
->### Product Owner
-> ```Devara Gandany```
->### Scrum Master
->```Krisna Pramulya```
->### Product Management
->- ```Maghtilda Saoda```
->- ```Rathi```
->### UI/UX Designer
->- ```Devara Gandanny```
->- ```Zalsabilla Tsania```
->- ```Safia Sukma```
->### Fullstack Team
->- ```Fadillah Akbar (Frontend)```
->- ```Krisna Pramulya (Frontend)```
->- ```Sadam Wahid (Frontend)```
->- ```Safira Tyas (Backend)```
->- ```Siti Haryati (Backend)```
->### Android
->```Abdul Hafiz```
+>#### Product Owner
+>- Devara Gandany
+>#### Scrum Master
+>- Krisna Pramulya
+>#### Product Management
+>- Maghtilda Saoda
+>- Rathi
+>#### UI/UX Designer
+>- Devara Gandanny
+>- Zalsabilla Tsania
+>- Safia Sukma
+>#### Fullstack Team
+>- Fadillah Akbar (Frontend)
+>- Krisna Pramulya (Frontend)
+>- Sadam Wahid (Frontend)
+>- Safira Tyas (Backend)
+>- Siti Haryati (Backend)
+>#### Android
+>- Abdul Hafiz
 
 ## APK
-<a href="https://github.com/FizCode/MP-AntrianDokter-AND/raw/master/app/build/outputs/apk/debug/app-debug.apk"><img src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsrounded/file_download/wght700/48px.svg" alt="download" width=18pt height=18pt/> Download APK</a>
+<a href="https://github.com/FizCode/MP-AntrianDokter-AND/raw/master/app/build/outputs/apk/debug/app-debug.apk"><img src="https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/apk_install/default/48px.svg" alt="download" width=18pt height=18pt/> Download APK</a>
+
 
 ## Design Pattern
-### MVVM (Model–view–viewmodel)
+### MVVM (Model–view–viewModel)
 
 <img src="https://user-images.githubusercontent.com/101188749/191090517-667ab400-5b0e-403d-ab44-81cbee605f81.png" alt="MVVM" width=50% height=50%>
 
@@ -43,12 +44,11 @@ Coming soon...
 >- <a href='https://developer.android.com/jetpack/androidx/releases/room'>Room Database</a>: Dipakai untuk database local
 >- <a href='https://kotlinlang.org/docs/coroutines-guide.html'>Kotlin Coroutines</a>: Dipakai untuk async code menjadi sync code pada Live Data
 >- <a href='https://developer.android.com/training/dependency-injection/hilt-android'>Hilt (Dagger-hilt)</a>: Dipakai untuk dependency injection
->- <a href='https://github.com/bumptech/glide'>Glide</a>: Dipakai untuk image loading
 
-## Supported Apps
->- <a href='https://developer.android.com/studio'>Android Studio</a>
->- <a href='https://www.postman.com/'>Postman</a>
->- <a href='https://json2kt.com/'>Json2KT data class generator</a>
+## Support Apps
+>- <a href='https://developer.android.com/studio'>Android Studio</a> <a>: as an Andorid IDE </a>
+>- <a href='https://www.postman.com/'>Postman</a> <a>: as an API Tester </a>
+>- <a href='https://json2kt.com/'>Json2KT</a> <a>: as a data class generator</a>
 
 ## App in Video
 Coming soon...
