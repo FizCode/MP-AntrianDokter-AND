@@ -18,7 +18,6 @@ import javax.inject.Inject
 class ProfilViewModel @Inject constructor(
     private val authRepository: AuthRepository,
     private val profileRepository: ProfileRepository,
-    private val dao: UserDAO
 ) : ViewModel() {
 
     val shouldShowProfile: MutableLiveData<WhoAmIResponse> = MutableLiveData()

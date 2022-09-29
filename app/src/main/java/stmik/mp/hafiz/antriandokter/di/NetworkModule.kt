@@ -19,7 +19,7 @@ class NetworkModule {
     @Singleton
     @Provides
     @Named(Constant.Named.BASE_URL)
-    fun provideBaseUrl(): String = "https://mediq-backend.herokuapp.com/api/patients/"
+    fun provideBaseUrl(): String = "https://mediq-backend.herokuapp.com/api/"
 
     @Singleton
     @Provides

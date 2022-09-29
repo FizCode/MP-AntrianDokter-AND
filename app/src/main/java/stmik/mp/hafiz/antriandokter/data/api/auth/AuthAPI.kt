@@ -9,18 +9,18 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface AuthAPI {
-    @POST("login")
+    @POST("patients/login")
     suspend fun signIn(@Body request: SignInRequest): Response<SignInResponse>
 
-    @POST("register")
+    @POST("patients/register")
     suspend fun signUp(@Body request: SignUpRequest): Response<SignUpResponse>
 
-    @GET("who-am-i")
+    @GET("patients/who-am-i")
     suspend fun getUserData(
         @Header("Authorization") token: String,
     ): Response<WhoAmIResponse>
 
-    @PUT("{id}/detail")
+    @PUT("patients/{id}/detail")
     suspend fun updateUserData(
         @Body request: UpdateUserDataRequest,
         @Path("id") id: Int,

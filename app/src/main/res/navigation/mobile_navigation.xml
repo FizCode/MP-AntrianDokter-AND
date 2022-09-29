@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="stmik.mp.hafiz.antriandokter.ui.navbar.ui.dashboard.DaftarFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_antre"
+        android:name="stmik.mp.hafiz.antriandokter.ui.navbar.ui.antre.AntreFragment"
+        android:label="@string/antre"
+        tools:layout="@layout/fragment_antre" />
 
     <fragment
         android:id="@+id/navigation_profil"

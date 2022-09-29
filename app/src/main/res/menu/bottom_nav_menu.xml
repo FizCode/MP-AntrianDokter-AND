@@ -7,9 +7,9 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_antre"
         android:icon="@drawable/selector_navbar_assignment_add"
-        android:title="@string/daftar" />
+        android:title="@string/antre" />
 
     <item
         android:id="@+id/navigation_profil"

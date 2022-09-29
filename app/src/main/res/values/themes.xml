@@ -51,7 +51,6 @@
 
 
     <!-- Button Styles -->
-
     <style name="Widget.App.Button" parent="Widget.Material3.Button">
         <item name="fontFamily">@font/poppins_medium</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
@@ -60,6 +59,10 @@
     </style>
     
     <!-- Navbar -->
+    <style name="BottomNavigationViewTextStyle" parent="Widget.Material3.BottomNavigationView">
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+    
     <style name="Widget.App.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/primary_300</item>
     </style>
