@@ -8,8 +8,10 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import stmik.mp.hafiz.antriandokter.Constant
 import stmik.mp.hafiz.antriandokter.data.api.auth.AuthAPI
+import stmik.mp.hafiz.antriandokter.data.api.queue.QueueAPI
 import javax.inject.Named
 import javax.inject.Singleton
 
@@ -58,5 +60,13 @@ class NetworkModule {
         @Named(Constant.Named.RETROFIT) retrofit: Retrofit
     ): AuthAPI {
         return retrofit.create(AuthAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideQueueApi(
+        @Named(Constant.Named.RETROFIT) retrofit: Retrofit
+    ): QueueAPI {
+        return  retrofit.create(QueueAPI::class.java)
     }
 }

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_dialog_default"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        style="@style/title_medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Konfirmasi Pendaftaran"
+        android:textAlignment="center"
+        android:textColor="@color/text_black"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_dialog_confirmation"
+        style="@style/body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Apakah Anda ingin melakukan pemeriksaan dengan data sebagai berikut"
+        android:textAlignment="center"
+        android:textColor="@color/text_black"
+        app:layout_constraintTop_toBottomOf="@id/tv_dialog_title"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/tv_dialog_error"
+        style="@style/body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="*Pemanggilan berdasarkan no. urut"
+        android:textAlignment="center"
+        android:textColor="@color/error"
+        app:layout_constraintTop_toBottomOf="@id/tv_dialog_confirmation"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_dialog_patient_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_dialog_error">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/body_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nama_pasien" />
+
+            <TextView
+                style="@style/body_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanggal" />
+
+            <TextView
+                style="@style/body_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hari" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_dialog_patient_name"
+                style="@style/body_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=": Patient Name" />
+
+            <TextView
+                android:id="@+id/tv_dialog_date"
+                style="@style/body_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=": Date" />
+
+            <TextView
+                android:id="@+id/tv_dialog_day"
+                style="@style/body_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=": Day" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_dialog_negative"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:backgroundTint="@color/error"
+        android:text="Batal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn_dialog_positive"
+        app:layout_constraintTop_toBottomOf="@id/ll_dialog_patient_data" />
+
+    <Button
+        android:id="@+id/btn_dialog_positive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Konfirmasi"
+        app:layout_constraintLeft_toRightOf="@id/btn_dialog_negative"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_dialog_patient_data" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

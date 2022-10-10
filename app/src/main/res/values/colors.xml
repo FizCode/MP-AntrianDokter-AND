@@ -15,4 +15,5 @@
     <color name="grey_300">#FFD0D0D0</color>
     <color name="text_black">#FF333333</color>
     <color name="text_white">#FFFCFCFC</color>
+    <color name="error">#FFB3261E</color>
 </resources>
