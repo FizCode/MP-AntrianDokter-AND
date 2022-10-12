@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import stmik.mp.hafiz.antriandokter.R
 import stmik.mp.hafiz.antriandokter.common.ChangeDateFormat.changeDate
 import stmik.mp.hafiz.antriandokter.common.ChangeDateFormat.changeDay
 import stmik.mp.hafiz.antriandokter.databinding.ActivityTicketBinding
@@ -22,6 +24,7 @@ class TicketActivity : AppCompatActivity() {
         binding = ActivityTicketBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        window.navigationBarColor = ContextCompat.getColor(applicationContext, R.color.transparent)
 
         bindView()
         bindViewModel()

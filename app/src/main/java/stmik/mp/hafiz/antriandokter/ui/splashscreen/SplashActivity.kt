@@ -2,15 +2,11 @@ package stmik.mp.hafiz.antriandokter.ui.splashscreen
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.activity.viewModels
-import androidx.annotation.ColorInt
+import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
-import stmik.mp.hafiz.antriandokter.R
 import stmik.mp.hafiz.antriandokter.databinding.ActivitySplashBinding
 import stmik.mp.hafiz.antriandokter.ui.navbar.MenuActivity
 import stmik.mp.hafiz.antriandokter.ui.signin.SignInActivity
@@ -26,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        val timer = object : CountDownTimer(3000, 1000) {
+        val timer = object : CountDownTimer(2000, 1000) {
             override fun onTick(millisUntilFinished: Long) {}
 
             override fun onFinish() {

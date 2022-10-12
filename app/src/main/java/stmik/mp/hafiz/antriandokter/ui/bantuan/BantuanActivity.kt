@@ -2,6 +2,7 @@ package stmik.mp.hafiz.antriandokter.ui.bantuan
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -23,6 +24,7 @@ class BantuanActivity : AppCompatActivity(), OnMapReadyCallback {
         binding = ActivityBantuanBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        window.navigationBarColor = ContextCompat.getColor(applicationContext, R.color.transparent)
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager

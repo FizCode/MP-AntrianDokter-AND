@@ -1,12 +1,12 @@
 package stmik.mp.hafiz.antriandokter.ui.editprofil
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
 import android.view.View
 import android.widget.ArrayAdapter
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointBackward
@@ -26,6 +26,7 @@ class EditProfilActivity : AppCompatActivity() {
         binding = ActivityEditProfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        window.navigationBarColor = ContextCompat.getColor(applicationContext, R.color.transparent)
 
         viewModel.onViewLoaded()
         bindView()

@@ -31,7 +31,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-            app:srcCompat="@color/grey_300" />
+            app:srcCompat="@drawable/ic_carbon_user_avatar_filled" />
 
 
         <LinearLayout
