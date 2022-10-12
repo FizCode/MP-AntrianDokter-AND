@@ -8,8 +8,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import stmik.mp.hafiz.antriandokter.data.api.auth.WhoAmIResponse
-import stmik.mp.hafiz.antriandokter.data.local.auth.UserDAO
+import stmik.mp.hafiz.antriandokter.data.local.auth.UserEntity
 import stmik.mp.hafiz.antriandokter.repository.AuthRepository
 import stmik.mp.hafiz.antriandokter.repository.ProfileRepository
 import javax.inject.Inject
@@ -20,7 +19,7 @@ class ProfilViewModel @Inject constructor(
     private val profileRepository: ProfileRepository,
 ) : ViewModel() {
 
-    val shouldShowProfile: MutableLiveData<WhoAmIResponse> = MutableLiveData()
+    val shouldShowProfile: MutableLiveData<UserEntity> = MutableLiveData()
     val shouldOpenSignIn: MutableLiveData<Boolean> = MutableLiveData()
     val shouldShowError: MutableLiveData<String> = MutableLiveData()
 

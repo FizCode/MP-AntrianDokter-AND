@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import stmik.mp.hafiz.antriandokter.data.local.auth.UserDAO
 import stmik.mp.hafiz.antriandokter.data.local.auth.UserEntity
 
-@Database(entities = [UserEntity::class], version = 1, exportSchema = false)
+@Database(entities = [UserEntity::class], version = 2)
 abstract class LocalDatabase: RoomDatabase() {
     abstract fun userDAO(): UserDAO
 
@@ -27,10 +27,6 @@ abstract class LocalDatabase: RoomDatabase() {
             return Room.databaseBuilder(context, LocalDatabase::class.java, DB_NAME)
                 .fallbackToDestructiveMigration()
                 .build()
-        }
-
-        fun destroyInstance() {
-            INSTANCE = null
         }
     }
 }

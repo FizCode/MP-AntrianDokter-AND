@@ -8,8 +8,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import stmik.mp.hafiz.antriandokter.data.api.auth.WhoAmIResponse
 import stmik.mp.hafiz.antriandokter.data.api.queue.AllBookingsResponse
+import stmik.mp.hafiz.antriandokter.data.local.auth.UserEntity
 import stmik.mp.hafiz.antriandokter.repository.AuthRepository
 import stmik.mp.hafiz.antriandokter.repository.ProfileRepository
 import stmik.mp.hafiz.antriandokter.repository.QueueRepository
@@ -22,7 +22,7 @@ class HomeViewModel @Inject constructor(
     private val queueRepository: QueueRepository
 ) : ViewModel() {
 
-    val shouldShowProfile: MutableLiveData<WhoAmIResponse> = MutableLiveData()
+    val shouldShowProfile: MutableLiveData<UserEntity> = MutableLiveData()
     val shouldShowAllBookings: MutableLiveData<AllBookingsResponse> = MutableLiveData()
 
     fun onViewLoaded() {

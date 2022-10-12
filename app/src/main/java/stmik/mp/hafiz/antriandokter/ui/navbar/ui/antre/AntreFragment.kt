@@ -7,16 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import stmik.mp.hafiz.antriandokter.R
-import stmik.mp.hafiz.antriandokter.data.api.queue.CreateBookingRequest
+import stmik.mp.hafiz.antriandokter.common.ChangeDateFormat.changeDate
+import stmik.mp.hafiz.antriandokter.common.ChangeDateFormat.changeDay
 import stmik.mp.hafiz.antriandokter.databinding.FragmentAntreBinding
 import stmik.mp.hafiz.antriandokter.model.CreateBookingModel
 import stmik.mp.hafiz.antriandokter.ui.dialog.CustomDialogFragment
+import java.text.SimpleDateFormat
+import java.util.*
 
 @AndroidEntryPoint
 class AntreFragment : Fragment() {
@@ -43,7 +45,7 @@ class AntreFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        // viewModel.onViewLoaded()
+        viewModel.onViewLoaded()
     }
 
     override fun onDestroyView() {
@@ -60,17 +62,6 @@ class AntreFragment : Fragment() {
             onValidate()
         }
 
-        /*with(binding) {
-            etAntreName.doAfterTextChanged { viewModel.onChangePatientName(it.toString()) }
-            etAntreNik.doAfterTextChanged { viewModel.onChangeNIK(it.toString()) }
-            actvAntreBpjs.doAfterTextChanged {
-                if (it.toString() == "BPJS") {
-                    viewModel.onChangeBpjs(1)
-                } else {
-                    viewModel.onChangeBpjs(2)
-                }
-            }
-        }*/
     }
 
     private fun bindViewModel() {
@@ -79,14 +70,45 @@ class AntreFragment : Fragment() {
             snackbar.view.setBackgroundColor(Color.RED)
             snackbar.show()
         }
+        viewModel.shouldShowLoading.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.piAntre.visibility = View.VISIBLE
+            } else {
+                binding.piAntre.visibility = View.INVISIBLE
+            }
+        }
         viewModel.shouldShowProfile.observe(viewLifecycleOwner) {
             binding.tvAntreUserName.text = "Halo, ${it.name}"
-            val userId = it.id
-
         }
         viewModel.shouldShowTicketData.observe(viewLifecycleOwner) {
-        }
 
+            with(binding) {
+                val indonesia = Locale("in", "ID")
+                val date = "2022-10-12"
+
+                val splitDate = date.split("-")
+                val splittedDate = "${splitDate[2].trim()}-${splitDate[1].trim()}-${splitDate[0].trim()}"
+
+                val dateConversion = SimpleDateFormat("dd-MM-yyyy").parse(splittedDate)
+
+                tvAntreBookingId.text = "Booking ID : ${it.id.toString()}"
+                tvAntreQueueNumber.text = "${it.queueNumber.toString()}"
+                tvAntrePatientName.text = ": ${it.patientName.toString()}"
+                tvAntreDateOfVisit.text = ": ${it.dateOfVisit?.let { it1 -> changeDate(it1) }}"
+                tvAntreDayOfVisit.text = ": ${it.dateOfVisit?.let { it1 -> changeDay(it1) }}"
+            }
+        }
+        viewModel.shouldOpenTicket.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.llAntreTicket.visibility = View.VISIBLE
+                binding.svAntreForm.visibility = View.GONE
+                binding.btnAntreDaftar.visibility = View.GONE
+            } else {
+                binding.llAntreTicket.visibility = View.GONE
+                binding.svAntreForm.visibility = View.VISIBLE
+                binding.btnAntreDaftar.visibility = View.VISIBLE
+            }
+        }
     }
 
     private fun onValidate() {
@@ -122,4 +144,5 @@ class AntreFragment : Fragment() {
     private fun onClickDaftar(request: CreateBookingModel) {
         CustomDialogFragment(request).show(parentFragmentManager, null)
     }
+
 }

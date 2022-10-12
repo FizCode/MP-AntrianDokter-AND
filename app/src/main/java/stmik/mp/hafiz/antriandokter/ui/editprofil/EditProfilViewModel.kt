@@ -10,7 +10,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import stmik.mp.hafiz.antriandokter.data.ErrorResponse
 import stmik.mp.hafiz.antriandokter.data.api.auth.UpdateUserDataRequest
-import stmik.mp.hafiz.antriandokter.data.api.auth.WhoAmIResponse
 import stmik.mp.hafiz.antriandokter.data.local.auth.UserEntity
 import stmik.mp.hafiz.antriandokter.repository.AuthRepository
 import stmik.mp.hafiz.antriandokter.repository.ProfileRepository
@@ -29,7 +28,7 @@ class EditProfilViewModel @Inject constructor(
     private var gender: String = ""
 
     val shouldShowLoading: MutableLiveData<Boolean> = MutableLiveData()
-    val shouldShowProfile: MutableLiveData<WhoAmIResponse> = MutableLiveData()
+    val shouldShowProfile: MutableLiveData<UserEntity> = MutableLiveData()
     val shouldShowError: MutableLiveData<String> = MutableLiveData()
     val shouldShowSuccess: MutableLiveData<String> = MutableLiveData()
 
@@ -109,10 +108,10 @@ class EditProfilViewModel @Inject constructor(
                             name = it.name.orEmpty(),
                             email = it.email.orEmpty(),
                             password = it.password.orEmpty(),
-                            dob = it.dateOfBirth.orEmpty(),
+                            dateOfBirth = it.dateOfBirth.orEmpty(),
                             address = it.address.orEmpty(),
                             gender = it.gender.orEmpty(),
-                            nik = it.NIK.orEmpty(),
+                            NIK = it.NIK.orEmpty(),
                             phoneNumber = it.phoneNumber.orEmpty()
                         )
                         insertProfile(userEntity = userEntity)

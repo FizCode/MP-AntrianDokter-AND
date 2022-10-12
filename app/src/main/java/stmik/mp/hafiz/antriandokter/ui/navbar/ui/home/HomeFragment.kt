@@ -36,6 +36,13 @@ class HomeFragment : Fragment() {
 
         binding.rvPatientQueue.adapter = antrianListAdapter
 
+        /*// for test Ticket Activity
+        binding.tvHomeAntrianNow.setOnClickListener {
+            val intent = Intent(context, TicketActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
+        }*/
+
         return binding.root
     }
 

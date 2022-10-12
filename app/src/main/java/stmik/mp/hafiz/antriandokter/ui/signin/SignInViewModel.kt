@@ -85,10 +85,10 @@ class SignInViewModel @Inject constructor(
                             name = it.name.orEmpty(),
                             email = it.email.orEmpty(),
                             password = it.password.orEmpty(),
-                            dob = it.dateOfBirth.orEmpty(),
+                            dateOfBirth = it.dateOfBirth.orEmpty(),
                             address = it.address.orEmpty(),
                             gender = it.gender.orEmpty(),
-                            nik = it.NIK.orEmpty(),
+                            NIK = it.NIK.orEmpty(),
                             phoneNumber = it.phoneNumber.orEmpty()
                         )
                         insertProfile(userEntity = userEntity)

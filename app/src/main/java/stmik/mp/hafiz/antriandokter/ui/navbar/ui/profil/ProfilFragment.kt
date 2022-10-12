@@ -30,6 +30,7 @@ class ProfilFragment : Fragment() {
 
         _binding = FragmentProfilBinding.inflate(inflater, container, false)
         viewModel.onViewLoaded()
+
         bindViewModel()
         return binding.root
     }

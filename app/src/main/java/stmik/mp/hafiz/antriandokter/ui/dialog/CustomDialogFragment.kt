@@ -1,6 +1,6 @@
 package stmik.mp.hafiz.antriandokter.ui.dialog
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,18 +11,14 @@ import dagger.hilt.android.AndroidEntryPoint
 import stmik.mp.hafiz.antriandokter.databinding.FragmentCustomDialogBinding
 import stmik.mp.hafiz.antriandokter.model.CreateBookingModel
 import stmik.mp.hafiz.antriandokter.ui.navbar.ui.antre.AntreViewModel
-import java.text.DateFormat
+import stmik.mp.hafiz.antriandokter.ui.ticket.TicketActivity
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeFormatter.ofPattern
 import java.util.*
 
 @AndroidEntryPoint
 class CustomDialogFragment(
     var createBookingModel: CreateBookingModel
-    ) : DialogFragment() {
+) : DialogFragment() {
 
     private var _binding: FragmentCustomDialogBinding? = null
     private val binding get() = _binding!!
@@ -35,14 +31,17 @@ class CustomDialogFragment(
 
         _binding = FragmentCustomDialogBinding.inflate(inflater, container, false)
         bindView()
+        bindViewModel()
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
-        dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog?.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
     }
-
 
     private fun bindView() {
         val patientName = createBookingModel.name
@@ -58,11 +57,6 @@ class CustomDialogFragment(
         }
 
         val indonesia = Locale("in", "ID")
-        /* val current = LocalDateTime.now()
-         val dateFormat = DateTimeFormatter.ofPattern("dd MMMM yyyy", indonesia)
-         val dayFormat = DateTimeFormatter.ofPattern("EEEE", indonesia)
-         val date = current.format(dateFormat)
-         val day = current.format(dayFormat)*/
         val dateFormat = SimpleDateFormat("dd MMMM yyyy", indonesia)
         val dayFormat = SimpleDateFormat("EEEE", indonesia)
         val date = dateFormat.format(Date())
@@ -73,10 +67,17 @@ class CustomDialogFragment(
         binding.tvDialogDay.text = ": $day"
         binding.btnDialogPositive.setOnClickListener {
             viewModel.onClickDaftar()
-            dismiss()
+            // dialog?.dismiss()
         }
         binding.btnDialogNegative.setOnClickListener {
-            dismiss()
+            dialog?.dismiss()
+        }
+    }
+
+    private fun bindViewModel() {
+        viewModel.shouldOpenTicketPage.observe(viewLifecycleOwner) {
+            val intent = Intent(requireContext(), TicketActivity::class.java)
+            startActivity(intent)
         }
     }
 
