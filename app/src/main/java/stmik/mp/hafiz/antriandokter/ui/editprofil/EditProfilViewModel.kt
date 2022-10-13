@@ -72,7 +72,7 @@ class EditProfilViewModel @Inject constructor(
         CoroutineScope(Dispatchers.IO).launch {
             val token = authRepository.getToken().toString()
             val userDataId = profileRepository.getProfile().id
-            val result = userDataId?.let {
+            val result = userDataId.let {
                 authRepository.updateUserData(
                     request = UpdateUserDataRequest(
                         name = name,
@@ -86,7 +86,7 @@ class EditProfilViewModel @Inject constructor(
                 )
             }
             withContext(Dispatchers.Main) {
-                if (result?.isSuccessful!!) {
+                if (result.isSuccessful) {
                     getUserData(token = "Bearer $token")
                 } else {
                     shouldShowError.postValue(result.errorBody().toString())

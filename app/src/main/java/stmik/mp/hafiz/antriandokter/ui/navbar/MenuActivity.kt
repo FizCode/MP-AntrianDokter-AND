@@ -27,12 +27,17 @@ class MenuActivity : AppCompatActivity() {
         supportActionBar?.hide()
         window.statusBarColor = ContextCompat.getColor(applicationContext, R.color.transparent)
 
-        @Suppress("DEPRECATION")
-        window.decorView.systemUiVisibility = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-        } else {
-            View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if (!resources.configuration.isNightModeActive) {
+                @Suppress("DEPRECATION")
+                window.decorView.systemUiVisibility = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+                } else {
+                    View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                }
+            }
         }
+
 
         val navView: BottomNavigationView = binding.navView
         // navView.itemIconTintList = null

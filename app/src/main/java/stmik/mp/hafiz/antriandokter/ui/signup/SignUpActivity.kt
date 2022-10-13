@@ -2,12 +2,13 @@ package stmik.mp.hafiz.antriandokter.ui.signup
 
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointBackward
@@ -17,8 +18,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import stmik.mp.hafiz.antriandokter.R
 import stmik.mp.hafiz.antriandokter.databinding.ActivitySignUpBinding
 import stmik.mp.hafiz.antriandokter.ui.signin.SignInActivity
-import java.text.SimpleDateFormat
-import java.util.Locale
 
 @AndroidEntryPoint
 class SignUpActivity : AppCompatActivity() {
@@ -84,8 +83,7 @@ class SignUpActivity : AppCompatActivity() {
             snackbar.show()
         }
         viewModel.shouldShowSuccess.observe(this) {
-            val snackbar = Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG)
-            snackbar.show()
+            Toast.makeText(applicationContext, it, Toast.LENGTH_SHORT).show()
         }
         viewModel.shouldShowLoading.observe(this) {
             if (it) {

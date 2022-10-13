@@ -14,6 +14,7 @@ import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import stmik.mp.hafiz.antriandokter.R
+import stmik.mp.hafiz.antriandokter.common.ChangeDateFormat.toDefaultDateFormat
 import stmik.mp.hafiz.antriandokter.databinding.ActivityEditProfilBinding
 
 @AndroidEntryPoint
@@ -96,7 +97,9 @@ class EditProfilActivity : AppCompatActivity() {
                 etEditProfilName.setText(it.name)
                 etEditProfilNik.setText(it.NIK)
                 etEditProfilEmail.setText(it.email)
-                etEditProfilDob.setText(it.dateOfBirth)
+                etEditProfilDob.setText(
+                    toDefaultDateFormat(it.dateOfBirth.toString())
+                )
                 etEditProfilAlamat.setText(it.address)
                 actvEditProfilGender.setText(it.gender)
             }

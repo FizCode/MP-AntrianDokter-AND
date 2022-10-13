@@ -17,8 +17,7 @@ import stmik.mp.hafiz.antriandokter.common.ChangeDateFormat.changeDay
 import stmik.mp.hafiz.antriandokter.databinding.FragmentAntreBinding
 import stmik.mp.hafiz.antriandokter.model.CreateBookingModel
 import stmik.mp.hafiz.antriandokter.ui.dialog.CustomDialogFragment
-import java.text.SimpleDateFormat
-import java.util.*
+
 
 @AndroidEntryPoint
 class AntreFragment : Fragment() {
@@ -83,14 +82,6 @@ class AntreFragment : Fragment() {
         viewModel.shouldShowTicketData.observe(viewLifecycleOwner) {
 
             with(binding) {
-                val indonesia = Locale("in", "ID")
-                val date = "2022-10-12"
-
-                val splitDate = date.split("-")
-                val splittedDate = "${splitDate[2].trim()}-${splitDate[1].trim()}-${splitDate[0].trim()}"
-
-                val dateConversion = SimpleDateFormat("dd-MM-yyyy").parse(splittedDate)
-
                 tvAntreBookingId.text = "Booking ID : ${it.id.toString()}"
                 tvAntreQueueNumber.text = "${it.queueNumber.toString()}"
                 tvAntrePatientName.text = ": ${it.patientName.toString()}"
