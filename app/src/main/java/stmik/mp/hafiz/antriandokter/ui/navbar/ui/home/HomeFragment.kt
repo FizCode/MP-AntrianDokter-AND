@@ -1,6 +1,5 @@
 package stmik.mp.hafiz.antriandokter.ui.navbar.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -15,7 +14,6 @@ import androidx.viewpager2.widget.ViewPager2
 import dagger.hilt.android.AndroidEntryPoint
 import stmik.mp.hafiz.antriandokter.R
 import stmik.mp.hafiz.antriandokter.databinding.FragmentHomeBinding
-import stmik.mp.hafiz.antriandokter.ui.ticket.TicketActivity
 import kotlin.math.abs
 
 
@@ -56,12 +54,12 @@ class HomeFragment : Fragment() {
             }
         })
 
-        // for test Ticket Activity
+        /*// for test Ticket Activity
         binding.tvHomeAntrianNow.setOnClickListener {
             val intent = Intent(context, TicketActivity::class.java)
             startActivity(intent)
             activity?.finish()
-        }
+        }*/
 
         return binding.root
     }

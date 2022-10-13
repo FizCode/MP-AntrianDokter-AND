@@ -10,8 +10,8 @@ import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import stmik.mp.hafiz.antriandokter.databinding.FragmentProfilBinding
 import stmik.mp.hafiz.antriandokter.ui.bantuan.BantuanActivity
+import stmik.mp.hafiz.antriandokter.ui.dialog.SignOutDialogFragment
 import stmik.mp.hafiz.antriandokter.ui.editprofil.EditProfilActivity
-import stmik.mp.hafiz.antriandokter.ui.signin.SignInActivity
 
 @AndroidEntryPoint
 class ProfilFragment : Fragment() {
@@ -53,7 +53,7 @@ class ProfilFragment : Fragment() {
             startActivity(intent)
         }
         binding.llKeluar.setOnClickListener {
-            viewModel.signOut()
+            onClickSignOut()
         }
     }
 
@@ -62,13 +62,10 @@ class ProfilFragment : Fragment() {
             binding.tvProfileName.text = it.name
             binding.tvProfileEmail.text = it.email
         }
-        viewModel.shouldOpenSignIn.observe(viewLifecycleOwner) {
-            if (it) {
-                val intent = Intent(requireContext(), SignInActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
-            }
-        }
+    }
+
+    private fun onClickSignOut() {
+        SignOutDialogFragment().show(parentFragmentManager, null)
     }
 
     override fun onDestroyView() {

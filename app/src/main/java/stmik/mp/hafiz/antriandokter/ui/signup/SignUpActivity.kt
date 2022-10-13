@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
@@ -83,7 +82,8 @@ class SignUpActivity : AppCompatActivity() {
             snackbar.show()
         }
         viewModel.shouldShowSuccess.observe(this) {
-            Toast.makeText(applicationContext, it, Toast.LENGTH_SHORT).show()
+            val snackbar = Snackbar.make(binding.root, it, Snackbar.LENGTH_LONG)
+            snackbar.show()
         }
         viewModel.shouldShowLoading.observe(this) {
             if (it) {

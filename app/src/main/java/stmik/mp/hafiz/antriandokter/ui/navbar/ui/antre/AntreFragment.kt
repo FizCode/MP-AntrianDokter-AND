@@ -16,7 +16,7 @@ import stmik.mp.hafiz.antriandokter.common.ChangeDateFormat.changeDate
 import stmik.mp.hafiz.antriandokter.common.ChangeDateFormat.changeDay
 import stmik.mp.hafiz.antriandokter.databinding.FragmentAntreBinding
 import stmik.mp.hafiz.antriandokter.model.CreateBookingModel
-import stmik.mp.hafiz.antriandokter.ui.dialog.CustomDialogFragment
+import stmik.mp.hafiz.antriandokter.ui.dialog.AntreConfirmationDialogFragment
 
 
 @AndroidEntryPoint
@@ -133,7 +133,7 @@ class AntreFragment : Fragment() {
     }
 
     private fun onClickDaftar(request: CreateBookingModel) {
-        CustomDialogFragment(request).show(parentFragmentManager, null)
+        AntreConfirmationDialogFragment(request).show(parentFragmentManager, null)
     }
 
 }
