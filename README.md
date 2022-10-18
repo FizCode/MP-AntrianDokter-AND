@@ -2,6 +2,9 @@
 
 [![MediQ App CI](https://github.com/FizCode/MP-AntrianDokter-AND/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/FizCode/MP-AntrianDokter-AND/actions/workflows/ci.yml)
 
+## APK
+<a href="https://github.com/FizCode/MP-AntrianDokter-AND/raw/master/app/build/outputs/apk/debug/app-debug.apk"><img src="https://user-images.githubusercontent.com/101188749/195594803-085ae479-f9c8-4384-9226-fe18ac6b694d.svg" alt="download"></a>
+
 ## About MediQ App
 <br>
 <img src="https://user-images.githubusercontent.com/101188749/195571306-0219def5-8e9e-4cfd-8267-78365efab1a2.svg" width="250" align="left">
@@ -16,31 +19,6 @@ Medi berasal dari kata medis yang mengartikan bahwa aplikasi kami berada di ling
 MediQ adalah sebuah aplikasi yang memudahkan kamu ketika mengantri di rumah sakit, kamu gak perlu lagi buat datang pagi-pagi cuman buat ambil nomor antrian, dengan MediQ juga kamu bisa liat antrian tanpa harus nunggu lama-lama dirumah sakit loh. MediQ solusi nyaman antri untuk kunjungan doktermu !
 </p>
 <br>
-
-## Team 6 Project Structure
-
->#### Product Owner
->- Devara Gandany
->#### Scrum Master
->- Krisna Pramulya
->#### Product Management
->- Maghtilda Saoda
->- Rathi
->#### UI/UX Designer
->- Devara Gandanny
->- Zalsabilla Tsania
->- Safia Sukma
->#### Fullstack Team
->- Fadillah Akbar (Frontend)
->- Krisna Pramulya (Frontend)
->- Sadam Wahid (Frontend)
->- Safira Tyas (Backend)
->- Siti Haryati (Backend)
->#### Android
->- Abdul Hafiz
-
-## APK
-<a href="https://github.com/FizCode/MP-AntrianDokter-AND/raw/master/app/build/outputs/apk/debug/app-debug.apk"><img src="https://user-images.githubusercontent.com/101188749/195594803-085ae479-f9c8-4384-9226-fe18ac6b694d.svg" alt="download"></a>
 
 ## Design Pattern
 ### MVVM (Model–view–viewModel)
