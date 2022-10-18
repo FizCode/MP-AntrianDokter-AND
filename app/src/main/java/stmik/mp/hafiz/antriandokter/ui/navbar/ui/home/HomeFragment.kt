@@ -99,10 +99,12 @@ class HomeFragment : Fragment() {
         viewModel.shouldShowAllBookings.observe(viewLifecycleOwner) { list ->
             val bookingSize = list.data?.data?.size
             val isDoneFalse = list.data?.data!!.filter { it.isDone == false }
+            val currentQueue = isDoneFalse[0].queueNumber
 
             antrianListAdapter.updateAntrianList(isDoneFalse)
+            binding.tvHomeAntrianNow.text = currentQueue.toString()
+                // isDoneFalse.size.toString()
             binding.tvHomeAntrianTotal.text = bookingSize.toString()
-            binding.tvHomeAntrianNow.text = isDoneFalse.size.toString()
         }
 
         viewModel.shouldShowProfile.observe(viewLifecycleOwner) {

@@ -1,6 +1,7 @@
 package stmik.mp.hafiz.antriandokter.ui.navbar.ui.home
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -32,6 +33,13 @@ class AntrianListAdapter(
 
         holder.binding.tvPatientNumber.text = patient.queueNumber.toString()
         holder.binding.tvPatientName.text = patient.patientName.toString()
+
+        if (holder.adapterPosition == 0) {
+            val grey300 = "#FFD0D0D0"
+
+            holder.binding.tvPatientNumber.setTextColor(Color.parseColor(grey300))
+            holder.binding.tvPatientName.setTextColor(Color.parseColor(grey300))
+        }
     }
 
     override fun getItemCount(): Int {
