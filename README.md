@@ -7,11 +7,11 @@
 
 ## About MediQ App
 <br>
-<img src="https://user-images.githubusercontent.com/101188749/195571306-0219def5-8e9e-4cfd-8267-78365efab1a2.svg" width="250" align="left">
+<img src="https://user-images.githubusercontent.com/101188749/195571306-0219def5-8e9e-4cfd-8267-78365efab1a2.svg" width="25%" align="left">
 
 ## Official Logo MediQ
 <p align="justify">
-Medi berasal dari kata medis yang mengartikan bahwa aplikasi kami berada di lingkup medis, logo Q berarti antrian (Queue) yang mengartikan aplikasi kami membantu pasien dalam melakukan antrian, lambang burung, artinya kebebasan yang mengartikan bebas dari antrian, lambang buletan yang ada titik awal sama akhir itu seluruh proses antrian dari awal sampai akhir. - Devara (UI/UX)
+Medi berasal dari kata medis yang mengartikan bahwa aplikasi kami berada di lingkup medis, logo Q berarti antrian (Queue) yang mengartikan aplikasi kami membantu pasien dalam melakukan antrian, lambang burung, artinya kebebasan yang mengartikan bebas dari antrian, lambang buletan yang ada titik awal sama akhir itu seluruh proses antrian dari awal sampai akhir.
 </p>
 
 ## Description
@@ -39,9 +39,10 @@ MediQ adalah sebuah aplikasi yang memudahkan kamu ketika mengantri di rumah saki
 >- <a href='https://json2kt.com/'>Json2KT</a> <a>: as a data class generator</a>
 
 ## App in Video
-https://user-images.githubusercontent.com/101188749/195592976-e7d7590e-9ce3-4fe2-9eb3-fc0944f5266d.mp4
+https://user-images.githubusercontent.com/101188749/197212757-bfd3a17d-5def-46fc-9aad-d66e6e704c6b.mp4
+
 
 ## Screenshots
-![Frame 1](https://user-images.githubusercontent.com/101188749/195590098-7f571bc9-f64c-4798-84c8-f6f78eaff958.png)
-![Frame 2](https://user-images.githubusercontent.com/101188749/195590125-78a64845-39de-4fec-8d72-23d807a031b3.png)
-![Frame 3](https://user-images.githubusercontent.com/101188749/195590140-d8fb60f0-1db2-4f11-857a-71156c3f14d7.png)
+![Desktop - 1](https://user-images.githubusercontent.com/101188749/197212928-78076792-f57a-4af1-96c4-9c82f3445b3b.png)
+![Desktop - 2](https://user-images.githubusercontent.com/101188749/197212935-1ec6f9cd-726b-45da-8190-ddd9d8b91063.png)
+![Desktop - 3](https://user-images.githubusercontent.com/101188749/197212944-b70193d2-607b-4cf8-bb8b-4efe77dd34a9.png)

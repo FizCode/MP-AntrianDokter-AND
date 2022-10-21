@@ -40,7 +40,7 @@ android {
     dataBinding {
         enabled = true
     }
-    lintOptions {
+    lint {
         checkReleaseBuilds false
         disable 'NullSafeMutableLiveData'
     }
